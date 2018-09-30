@@ -1,0 +1,9 @@
+bootstrap_python_binary: "python"
+bootstrap_python_package: "python"
+
+bootstrap_essential_packages:
+  - "dbus"
+  - "lsb-release"
+  - "sudo"
+
+bootstrap_apt_cache_time: 86400

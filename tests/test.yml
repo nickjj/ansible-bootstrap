@@ -1,0 +1,13 @@
+---
+
+- hosts: "all"
+  become: True
+
+  roles:
+    - "role_under_test"
+
+  post_tasks:
+    - name: Ensure Python is installed
+      command: which {{ bootstrap_python_binary }}
+      register: result
+      changed_when: result.rc != 0

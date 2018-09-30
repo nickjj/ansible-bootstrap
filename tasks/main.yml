@@ -1,0 +1,14 @@
+---
+
+- name: Install Python without using Ansible modules
+  raw: |
+    bash -c "test -e /usr/bin/{{ bootstrap_python_binary }} \
+    || (apt -qy update && apt install -qy {{ bootstrap_python_package }})"
+  changed_when: False
+
+- name: Install essential packages
+  apt:
+    name: "{{ item }}"
+    update_cache: True
+    cache_valid_time: "{{ bootstrap_apt_cache_time }}"
+  loop: "{{ bootstrap_essential_packages }}"

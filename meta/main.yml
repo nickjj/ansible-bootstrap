@@ -1,0 +1,25 @@
+---
+
+galaxy_info:
+  role_name: "bootstrap"
+  author: "Nick Janetakis"
+  description: "Configure a server to run Ansible and install essential packages."
+  license: "license (MIT)"
+  min_ansible_version: 2.5
+
+  platforms:
+    - name: "Ubuntu"
+      versions:
+        - "xenial"
+        - "bionic"
+    - name: "Debian"
+      versions:
+        - "jessie"
+        - "stretch"
+
+  galaxy_tags:
+    - "bootstrap"
+    - "packaging"
+    - "system"
+
+dependencies: []
